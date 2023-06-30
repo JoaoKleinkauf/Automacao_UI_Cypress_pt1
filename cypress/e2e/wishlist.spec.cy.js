@@ -1,6 +1,6 @@
 ///<reference types='cypress'/>
 
-context('Funcionalidade de Wisslist', () => {
+context('Funcionalidade de Wishlist', () => {
     beforeEach(() => {
         cy.visit('http://lojaebac.ebaconline.art.br')
     });
@@ -24,6 +24,7 @@ context('Funcionalidade de Wisslist', () => {
         cy.get('#username').type('aluno_ebac@teste.com')
         cy.get('#password').type('teste@teste.com')
         cy.get('.woocommerce-form > .button').click()
+        
         cy.get(':nth-child(2) > .text-skin > .fa').click()
         cy.get('.remove > .fa').click()
         cy.get('.woocommerce-message').should('contain' , 'Produto removida com sucesso.')
