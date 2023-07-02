@@ -24,5 +24,8 @@ context('Funcionalidade pagina de produtos', () => {
         cy.get('.dropdown-toggle > .mini-cart-items').should('contain' , quant)
     });
    
+    it('Deve add produto usando comandos customizados', () => {
+        cy.addProduto('Abominable Hoodie', 'M', 'Red', 3)    
+    });
    
 });

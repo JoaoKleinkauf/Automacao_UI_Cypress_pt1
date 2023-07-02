@@ -18,6 +18,7 @@ context('Funcionalidade de cadastro', () => {
         cy.get('#reg_email').type(emailFaker)
         cy.get('#reg_password').type(senhaFaker)
         cy.get(':nth-child(4) > .button').click()
+
         cy.get('.woocommerce-MyAccount-navigation-link--edit-account > a').click()
         cy.get('#account_first_name').type(nomeFaker)
         cy.get('#account_last_name').type(sobreFaker)
@@ -26,6 +27,9 @@ context('Funcionalidade de cadastro', () => {
         cy.get('.woocommerce-message').should('contain' , 'Detalhes da conta modificados com sucesso.')
     });
 
-
+    it('Deve completar o pré-cadastro usando comandos customozados', () => {
+        var emailFaker2 = faker.internet.email()
+        cy.preCadastro(emailFaker2, 'cmdomc-1', 'João','Pedro')
+    });
 
 });
